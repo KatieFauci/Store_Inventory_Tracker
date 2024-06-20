@@ -1,0 +1,26 @@
+.navbar {
+    background-color: #305730; /* Navy green background color */
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-start; /* Left-justify the links */
+    align-items: center;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    border-bottom: 1px solid #1A3D3C; /* Add a dark green border to the bottom */
+}
+
+.navbar a {
+    color: #fff; /* White text color */
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.2s ease;
+    border-radius: 0.25rem; /* Add a slight curve to the links */
+}
+
+.navbar a:hover {
+    background-color: #234b25; /* A slightly lighter navy green hover color */
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.1); /* Add a slight drop shadow on hover */
+}
+
+.navbar a.active {
+    background-color: #1A3D3C; /* A darker navy green active color */
+}

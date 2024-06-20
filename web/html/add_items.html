@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Items</title>
+    <link rel="stylesheet" type="text/css" href="../css/add_items.css">
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(html => document.body.insertAdjacentHTML('afterbegin', html));
+    </script>
+    <script type="text/javascript" src="/eel.js"></script>
+    <script type="text/javascript" src="../scripts/add_items.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Add Items</h1>
+        <div id="items">
+            <div class="item" id="item-0">
+                <div class="section">
+                    <div class="item-field">
+                        <label for="item-name-0">Item Name:</label>
+                        <input type="text" id="item-name-0">
+                    </div>
+                    <div class="item-field">
+                        <label for="description-0">Description:</label>
+                        <input type="text" id="description-0">
+                    </div>
+                    <div class="item-field">
+                        <label for="sku-0">SKU:</label>
+                        <input type="text" id="sku-0">
+                    </div>
+                    <div class="item-field">
+                        <label for="quantity-0">Quantity:</label>
+                        <input type="number" id="quantity-0">
+                    </div>
+                    <div class="item-field">
+                        <label for="price-0">Price:</label>
+                        <input type="number" id="price-0">
+                    </div>
+                </div>
+                <div class="section crystal-section">
+                    <div class="section-header">Crystal Details</div>
+                    <div class="item-field">
+                        <label for="crystal-0">Crystal:</label>
+                        <select id="crystal-0" onchange="populateCrystalTypes(0)">
+                            <option value="">Select Crystal</option>
+                            <!-- Options will be added dynamically -->
+                            <option value="new">New Crystal</option>
+                        </select>
+                    </div>
+                    <div class="item-field">
+                        <label for="crystal-type-0">Crystal Type:</label>
+                        <select id="crystal-type-0">
+                            <option value="">Select Crystal Type</option>
+                            <!-- Options will be added dynamically -->
+                        </select>
+                    </div>
+                </div>
+                <div class="section material-section">
+                    <div class="section-header">Material Details</div>
+                    <div class="item-field">
+                        <label for="material-0">Material:</label>
+                        <select id="material-0" onchange="showMaterialFields(0)">
+                            <option value="">Select Material</option>
+                            <!-- Options will be added dynamically -->
+                            <option value="new">New Material</option>
+                        </select>
+                    </div>
+                    <div class="item-field">
+                        <label for="material-name-0">Material Name:</label>
+                        <input type="text" id="material-name-0">
+                    </div>
+                    <div class="item-field">
+                        <label for="material-description-0">Material Description:</label>
+                        <input type="text" id="material-description-0">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" onclick="submitItems()">Submit Items</button>
+        <button type="button" onclick="addItem()">New Item</button>
+    </div>
+        <button type="button" onclick="submitItems()">Submit Items</button>
+        <button type="button" onclick="addItem()">New Item</button>
+    </div>
+
+    <script>
+        function showCrystalsInput(index) {
+            const crystalField = document.getElementById(`crystal-field-${index}`);
+            const containsCrystalsCheckbox = document.getElementById(`contains-crystals-${index}`);
+            if (containsCrystalsCheckbox.checked) {
+                crystalField.style.display = 'block';
+            } else {
+                crystalField.style.display = 'none';
+            }
+        }
+
+        function populateCrystalTypes(index) {
+            const crystalSelect = document.getElementById(`crystal-${index}`);
+            const crystalTypeSelect = document.getElementById(`crystal-type-${index}`);
+            const crystalTypeField = document.getElementById(`crystal-type-field-${index}`);
+            crystalTypeField.style.display = 'block';
+            // Call a function to populate the crystal type dropdown based on the selected crystal
+            eel.get_crystal_types(crystalSelect.value)(function(crystalTypes) {
+                // Clear the existing options
+                crystalTypeSelect.innerHTML = '';
+                // Add the new options
+                crystalTypes.forEach(function(crystalType) {
+                    const option = document.createElement('option');
+                    option.value = crystalType.id;
+                    option.text = crystalType.name;
+                    crystalTypeSelect.appendChild(option);
+                });
+                // Add a "New Type" option
+                const newTypeOption = document.createElement('option');
+                newTypeOption.value = 'new';
+                newTypeOption.text = 'New Type';
+                crystalTypeSelect.appendChild(newTypeOption);
+            });
+        }
+    </script>
+</body>
+</html>

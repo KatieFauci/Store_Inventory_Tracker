@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo List</title>
+    <link rel="stylesheet" type="text/css" href="../css/todo_list.css">
+    <script type="text/javascript" src="/eel.js"></script>
+    <script type="text/javascript" src="../scripts/todo_list.js"></script>
+</head>
+<body>
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(html => document.body.insertAdjacentHTML('afterbegin', html));
+    </script>
+    <h1>Todo List</h1>
+    <form id="todo-list-form">
+        <table id="todo-list-table">
+            <tr>
+                <th>Task</th>
+                <th>Done</th>
+                <th>Actions</th>
+            </tr>
+            <tr>
+                <td><input type="text" id="task"></td>
+                <td><input type="checkbox" id="done"></td>
+                <td><button type="button" onclick="addItem()">Add</button></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

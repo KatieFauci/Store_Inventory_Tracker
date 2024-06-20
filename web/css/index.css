@@ -1,0 +1,159 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #305730; /* dark green */
+    color: #fff;
+}
+
+td {
+    font-size: 16px;
+}
+
+button {
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.update-button {
+    background-color: #8bc34a; /* light green */
+    color: #fff;
+}
+
+.update-button:hover {
+    background-color: #7cb342; /* darker light green */
+}
+
+.delete-button {
+    background-color: #e74c3c; /* red */
+    color: #fff;
+}
+
+.delete-button:hover {
+    background-color: #c0392b; /* darker red */
+}
+
+.increase-button, .decrease-button {
+    background-color: #45644d; /* dark green */
+    color: #fff;
+    padding: 2px 5px;
+    font-size: 12px;
+    border-radius: 50%;
+    margin: 2px;
+}
+
+.increase-button:hover, .decrease-button:hover {
+    background-color: #3e8e41; /* darker dark green */
+}
+
+.adjust-button {
+    background-color: #5ec34a; /* light green */
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.adjust-button:hover {
+    background-color: #b0ffa9; /* darker light green */
+}
+
+.low-quantity {
+    background-color: #ff8080; /* light red */
+}
+
+.medium-quantity {
+    background-color: #FFFF80; /* yellow */
+}
+
+.high-quantity {
+    background-color: #80FF80; /* green */
+}
+
+/* Search bar styles */
+.search-bar {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.search-bar input[type="search"] {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    width: 100%;
+}
+
+.search-bar input[type="search"]:focus {
+    outline: none;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+.search-bar button[type="submit"] {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #2E865F;
+    color: #fff;
+    cursor: pointer;
+}
+
+.search-bar button[type="submit"]:hover {
+    background-color: #3E8E7E;
+}
+
+/* Radio button styles */
+.radio-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.radio-buttons label {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.radio-buttons input[type="radio"] {
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    background-color: #fff;
+    margin-right: 0.5rem;
+}
+
+.radio-buttons input[type="radio"]:checked {
+    background-color: #2E865F;
+    border-color: #2E865F;
+}
+
+.radio-buttons input[type="radio"]:focus {
+    outline: none;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+

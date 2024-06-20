@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reports</title>
+    <link rel="stylesheet" type="text/css" href="../css/reports.css">
+    <script type="text/javascript" src="/eel.js"></script>
+    <script type="text/javascript" src="../scripts/reports.js"></script>
+</head>
+<body>
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(html => document.body.insertAdjacentHTML('afterbegin', html));
+    </script>
+
+    <div class="container"> 
+        <h1>Reports</h1>
+
+        <div class="input-group">
+            <label for="quantity-input">Quantity:</label>
+            <input type="number" id="quantity-input" placeholder="Enter quantity">
+            <button class="generate-button" onclick="generateReport()">Generate Report</button>
+        </div>
+
+
+        <table id="report-table">
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Description</th>
+                    <th>SKU</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody></tbody>  
+        </table>
+    </div> 
+
+</body>
+</html>

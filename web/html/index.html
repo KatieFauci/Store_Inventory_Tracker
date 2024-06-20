@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventory Tracker</title>
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <script type="text/javascript" src="/eel.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(html => document.body.insertAdjacentHTML('afterbegin', html));
+    </script>
+    <h1>Inventory Tracker</h1>
+    <div class="radio-buttons">
+        <span>
+            <input type="radio" id="item-name" name="search-criteria" value="item_name" checked>
+            <label for="item-name">Item Name</label>
+        </span>
+        <span>
+            <input type="radio" id="sku" name="search-criteria" value="SKU">
+            <label for="sku">SKU</label>
+        </span>
+        <span>
+            <input type="radio" id="quantity" name="search-criteria" value="quantity">
+            <label for="quantity">Quantity</label>
+        </span>
+    </div>
+    <br>
+    <input type="text" class="search-bar" id="search-bar" oninput="searchItems()">
+    <table id="inventory-table">
+        <tr>
+            <th>Item Name</th>
+            <th>SKU</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Crystal Type(s)</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </table>
+    <script>setTimeout(searchItems, 100);</script>
+    <script type="text/javascript" src="../scripts/index.js"></script>
+</body>
+</html>
